@@ -29,7 +29,7 @@ Created Initial Commit of Game
 
 ---
 
-## [0.0.2]() - Nov 8, 2024 | (Not Commited Until Nov 9, 2024)
+## [0.0.2](https://github.com/Navi7468/CSC-17C-Project-1/commit/main) - Nov 8, 2024 | (Not Commited Until Nov 9, 2024)
 
 ### Enhancements and Expanded Functionality
 
