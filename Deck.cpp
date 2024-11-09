@@ -1,15 +1,15 @@
 #include "Deck.h"
 
-template <size_t N>
-void shuffleArray(std::array<std::string, N>& arr) {
+template <typename T, size_t N>
+void shuffleArray(std::array<T, N>& arr) {
     std::random_device rd;
     std::mt19937 g(rd());
     std::shuffle(arr.begin(), arr.end(), g);
-}
+};
 
 Deck::Deck() {
     shuffleDecks();
-}
+};
 
 void Deck::shuffleDecks() {
     std::array<Card, 15> chanceCards = { 
@@ -57,18 +57,18 @@ void Deck::shuffleDecks() {
     for (const auto& card : communityChestCards) {
         communityChestDeck.push(card);
     }
-}
+};
 
 Card Deck::drawChanceCard() {
     if (chanceDeck.empty()) return Card{"No more Chance cards.", CardType::COLLECT_MONEY, 0};
     Card card = chanceDeck.top();
-    chanceDeck.pop()
+    chanceDeck.pop();
     return card;
-}
+};
 
 Card Deck::drawCommunityChestCard() {
     if (communityChestDeck.empty()) return Card{"No more Community Chest cards.", CardType::COLLECT_MONEY, 0};
     Card card = communityChestDeck.top();
     communityChestDeck.pop();
     return card;
-}
+};

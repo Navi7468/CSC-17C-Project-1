@@ -1,16 +1,22 @@
+#include "Game.h"
 #include <iostream>
-#include <string>
-#include <list>
-#include <stack>
-#include <algorithm>
 #include <ctime>
 
-class Player;
-class Property;
-class Deck;
+int main()
+{
+    std::srand(static_cast<unsigned int>(std::time(0)));
 
+    Game monopolyGame;
+    monopolyGame.setupGame();
 
+    // Start game loop
+    while (!monopolyGame.checkWinCondition())
+    {
+        monopolyGame.playerTurn();
+        
+        break; // DELETE - For testing purposes (only one turn)
+    }
+    monopolyGame.declareWinner();
 
-int main() {
-
+    return 0;
 }
